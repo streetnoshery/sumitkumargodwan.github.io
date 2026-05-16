@@ -25,6 +25,17 @@ const certificates = [
     color: '#34d399',
     tag: 'AI / ML',
   },
+  {
+    title: 'Node JS: Advanced Concepts',
+    issuer: 'Udemy',
+    instructor: 'Stephen Grider',
+    date: 'June 9, 2023',
+    hours: '16 hours',
+    url: 'https://ude.my/UC-384e5874-cd39-45c4-87e6-b767fe415969',
+    credentialId: 'UC-384e5874-cd39-45c4-87e6-b767fe415969',
+    color: '#38bdf8',
+    tag: 'Node.js',
+  },
 ]
 
 export default function Certificates() {
@@ -49,7 +60,7 @@ export default function Certificates() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {certificates.map((cert, i) => (
             <motion.div
               key={cert.credentialId}
