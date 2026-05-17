@@ -20,8 +20,11 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`)
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
-    window.location.href = `mailto:sumitgod510@gmail.com?subject=${subject}&body=${body}`
+    const body = encodeURIComponent(form.message)
+    // Use a hidden anchor to open mail client without navigating away
+    const a = document.createElement('a')
+    a.href = `mailto:sumitgod510@gmail.com?subject=${subject}&body=${body}&reply-to=${encodeURIComponent(form.email)}`
+    a.click()
     setStatus('success')
     setForm({ name: '', email: '', message: '' })
   }
