@@ -21,12 +21,13 @@ export default function Contact() {
     e.preventDefault()
     const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`)
     const body = encodeURIComponent(form.message)
-    // Use a hidden anchor to open mail client without navigating away
     const a = document.createElement('a')
     a.href = `mailto:sumitgod510@gmail.com?subject=${subject}&body=${body}&reply-to=${encodeURIComponent(form.email)}`
     a.click()
     setStatus('success')
     setForm({ name: '', email: '', message: '' })
+    // Re-enable the button after 3 seconds
+    setTimeout(() => setStatus(null), 3000)
   }
 
   const inputClass = "w-full px-4 py-3 rounded-xl bg-white/4 border border-white/8 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-violet-500/60 focus:bg-violet-500/5 transition-all duration-200 text-sm"
