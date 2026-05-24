@@ -24,7 +24,7 @@ const featured = {
   ],
   stack: ['Flutter', 'Dart', 'NestJS', 'TypeScript', 'Kafka', 'Redis', 'MongoDB'],
   appStoreUrl: 'https://apps.apple.com/in/app/niyo-global-cards-for-travel/id1633946487',
-  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.niyo.global',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=finance.global.travel.niyo&pcampaignid=web_share',
   image: niyoImg,
 }
 
