@@ -8,12 +8,11 @@ const TECH_TERMS = [
   'MongoDB', 'Kubernetes', 'AWS', 'TypeScript', 'Node.js', 'Dart',
 ]
 
-// Splits a bullet string into segments — numbers get white bold, tech gets violet badge
+// Splits a bullet string into segments — numbers and tech terms get white bold
 function HighlightedBullet({ text }) {
-  // Build a combined regex: numbers/% first, then tech terms
   const techPattern = TECH_TERMS.map((t) => t.replace(/[/+.]/g, '\\$&')).join('|')
   const regex = new RegExp(
-    `(\\d+[KM%+x]+(?:\\+)?(?:\\s*daily\\s+(?:transactions|requests))?|\\d+\\.\\d+[KM%+x]*|${techPattern})`,
+    `(\\d+[KM%+x]*(?:\\s*daily\\s+(?:transactions|requests))?|\\d+\\.\\d+[KM%+x]*|${techPattern})`,
     'g'
   )
 
@@ -23,32 +22,18 @@ function HighlightedBullet({ text }) {
 
   while ((match = regex.exec(text)) !== null) {
     if (match.index > last) parts.push({ type: 'text', value: text.slice(last, match.index) })
-    const val = match[0]
-    const isNumber = /^\d/.test(val)
-    parts.push({ type: isNumber ? 'number' : 'tech', value: val })
-    last = match.index + val.length
+    parts.push({ type: 'highlight', value: match[0] })
+    last = match.index + match[0].length
   }
   if (last < text.length) parts.push({ type: 'text', value: text.slice(last) })
 
   return (
     <>
-      {parts.map((p, i) => {
-        if (p.type === 'number') {
-          return (
-            <span key={i} className="text-white font-semibold">
-              {p.value}
-            </span>
-          )
-        }
-        if (p.type === 'tech') {
-          return (
-            <span key={i} className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-violet-500/15 border border-violet-500/25 text-violet-300 text-xs font-medium mx-0.5 leading-none" style={{ verticalAlign: 'middle' }}>
-              {p.value}
-            </span>
-          )
-        }
-        return <span key={i}>{p.value}</span>
-      })}
+      {parts.map((p, i) =>
+        p.type === 'highlight'
+          ? <span key={i} className="text-white font-semibold">{p.value}</span>
+          : <span key={i}>{p.value}</span>
+      )}
     </>
   )
 }
