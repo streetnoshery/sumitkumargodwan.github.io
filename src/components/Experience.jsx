@@ -23,7 +23,7 @@ const experiences = [
     product: 'Niyo Global Secured Credit Card — SBM Bank',
     current: false,
     bullets: [
-      'Developed FD flow and transaction microservices for card lifecycle and compliance, handling 2M+ daily requests.',
+      'Developed FD (Fixed Deposit) flow and transaction microservices for card lifecycle and compliance, handling 2M+ daily requests — enabling 200+ FD creations daily and directly driving business revenue growth.',
       'Optimized Kafka pipelines and Redis caching layer — contributed to 80% latency reduction across the platform.',
       'Engineered reliable REST APIs with idempotency and SNS/SQS-based async flows for card transaction processing.',
       'Built the SBM Secured Credit Card feature in the Niyo Flutter app — shipped to 1M+ users on App Store & Play Store.',
