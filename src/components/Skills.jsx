@@ -15,7 +15,7 @@ const groups = [
       { name: 'TypeScript', icon: <SiTypescript />, color: '#3b82f6', score: 9 },
       { name: 'JavaScript', icon: <SiJavascript />, color: '#eab308', score: 9 },
       { name: 'Python', icon: <SiPython />, color: '#60a5fa', score: 6 },
-      { name: 'Dart', icon: <SiDart />, color: '#54c5f8', score: 7 },
+      { name: 'Dart', icon: <SiDart />, color: '#54c5f8', score: 8 },
     ],
   },
   {
@@ -23,7 +23,7 @@ const groups = [
     items: [
       { name: 'Node.js', icon: <SiNodedotjs />, color: '#4ade80', score: 9 },
       { name: 'NestJS', icon: <SiNestjs />, color: '#f43f5e', score: 9 },
-      { name: 'Flutter', icon: <SiFlutter />, color: '#54c5f8', score: 7 },
+      { name: 'Flutter', icon: <SiFlutter />, color: '#54c5f8', score: 8 },
     ],
   },
   {

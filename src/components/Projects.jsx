@@ -2,14 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { SiAppstore, SiGoogleplay } from 'react-icons/si'
-
-// Place your app screenshot at src/assets/niyo-app.png
-let niyoImg = null
-try {
-  niyoImg = new URL('../assets/niyo-app.png', import.meta.url).href
-} catch {
-  niyoImg = null
-}
+import niyoImg from '../assets/niyo-app.png'
 
 const featured = {
   title: 'Niyo Global — Secured Credit Card',
