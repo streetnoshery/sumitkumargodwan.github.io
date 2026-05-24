@@ -1,43 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-// Tech terms to highlight inline in bullets
-const TECH_TERMS = [
-  'SNS/SQS', 'SQS/SNS', 'Kafka', 'Redis', 'NestJS', 'REST APIs', 'REST API',
-  'CI/CD', 'GitHub Actions', 'Grafana', 'Docker', 'MySQL', 'Flutter',
-  'MongoDB', 'Kubernetes', 'AWS', 'TypeScript', 'Node.js', 'Dart',
-]
-
-// Splits a bullet string into segments — numbers and tech terms get white bold
-function HighlightedBullet({ text }) {
-  const techPattern = TECH_TERMS.map((t) => t.replace(/[/+.]/g, '\\$&')).join('|')
-  const regex = new RegExp(
-    `(\\d+[KM%+x]*(?:\\s*daily\\s+(?:transactions|requests))?|\\d+\\.\\d+[KM%+x]*|${techPattern})`,
-    'g'
-  )
-
-  const parts = []
-  let last = 0
-  let match
-
-  while ((match = regex.exec(text)) !== null) {
-    if (match.index > last) parts.push({ type: 'text', value: text.slice(last, match.index) })
-    parts.push({ type: 'highlight', value: match[0] })
-    last = match.index + match[0].length
-  }
-  if (last < text.length) parts.push({ type: 'text', value: text.slice(last) })
-
-  return (
-    <>
-      {parts.map((p, i) =>
-        p.type === 'highlight'
-          ? <span key={i} className="text-white font-semibold">{p.value}</span>
-          : <span key={i}>{p.value}</span>
-      )}
-    </>
-  )
-}
-
 const experiences = [
   {
     role: 'Software Development Engineer II',
@@ -148,20 +111,20 @@ export default function Experience() {
                   </div>
 
                   {/* Bullets */}
-                  <ul className="space-y-2.5 mb-5">
+                  <ul className="space-y-2 mb-5">
                     {exp.bullets.map((b, bi) => (
                       <li key={bi} className="flex items-start gap-3 text-slate-400 text-sm leading-relaxed">
                         <span className="mt-2 w-1 h-1 rounded-full bg-violet-500 shrink-0" />
-                        <HighlightedBullet text={b} />
+                        {b}
                       </li>
                     ))}
                   </ul>
 
                   {/* Stack */}
-                  <div className="flex flex-wrap gap-2 pt-1 border-t border-white/5 mt-4">
+                  <div className="flex flex-wrap gap-2">
                     {exp.stack.map((tech) => (
                       <span key={tech}
-                        className="px-2.5 py-1 rounded-lg bg-violet-500/12 border border-violet-500/25 text-violet-300 text-xs font-semibold tracking-wide"
+                        className="px-2.5 py-1 rounded-lg bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-medium"
                       >
                         {tech}
                       </span>
