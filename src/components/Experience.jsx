@@ -26,8 +26,9 @@ const experiences = [
       'Developed FD flow and transaction microservices for card lifecycle and compliance, handling 2M+ daily requests.',
       'Optimized Kafka pipelines and Redis caching layer — contributed to 80% latency reduction across the platform.',
       'Engineered reliable REST APIs with idempotency and SNS/SQS-based async flows for card transaction processing.',
+      'Built the SBM Secured Credit Card feature in the Niyo Flutter app — shipped to 1M+ users on App Store & Play Store.',
     ],
-    stack: ['NestJS', 'TypeScript', 'MongoDB', 'Kafka', 'Redis', 'AWS SQS/SNS'],
+    stack: ['NestJS', 'TypeScript', 'MongoDB', 'Kafka', 'Redis', 'AWS SQS/SNS', 'Flutter', 'Dart'],
   },
   {
     role: 'Software Development Intern',

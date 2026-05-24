@@ -11,7 +11,7 @@ const contactInfo = [
 const cards = [
   { num: '20M+', label: 'Daily transactions handled', sub: 'across SBM & DCB bank integrations' },
   { num: '80%', label: 'Latency reduction', sub: 'via Kafka + Redis optimizations' },
-  { num: '500K+', label: 'Daily txns on DCB', sub: 'architected from scratch' },
+  { num: '1M+', label: 'App downloads', sub: 'Niyo app on App Store & Play Store' },
   { num: '2', label: 'Card product launches', sub: 'end-to-end backend delivery' },
 ]
 
@@ -56,9 +56,10 @@ export default function About() {
               design to production.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              I care deeply about reliability, observability, and writing systems that
-              other engineers can reason about. Outside of work, I build side projects
-              that let me experiment with new ideas at a smaller scale.
+              Beyond backend, I've contributed to the Niyo Flutter app — building the
+              SBM Secured Credit Card feature used by <span className="text-white font-medium">1M+ users</span> on
+              App Store and Play Store. I care deeply about reliability, observability,
+              and writing systems that other engineers can reason about.
             </p>
 
             {/* Contact chips */}
