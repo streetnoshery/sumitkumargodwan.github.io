@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { SiAppstore, SiGoogleplay } from 'react-icons/si'
-import niyoImg from '../assets/niyo-app.png'
+import niyoImg from '../assets/niyo-app.jpeg'
 
 const featured = {
   title: 'Niyo Global — Secured Credit Card',

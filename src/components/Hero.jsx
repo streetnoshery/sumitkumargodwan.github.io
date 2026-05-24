@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi'
-import niyoBg from '../assets/niyo-app.png'
+import niyoBg from '../assets/niyo-app.jpeg'
 
 const socialLinks = [
   { icon: <FiGithub size={18} />, href: 'https://github.com', label: 'GitHub' },
